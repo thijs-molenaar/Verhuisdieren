@@ -13,6 +13,7 @@
 		76D60F4E213B3E5F00AD5615 /* Verhuisdieren.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76D60F4C213B3E5F00AD5615 /* Verhuisdieren.xcdatamodeld */; };
 		76D60F50213B3E5F00AD5615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76D60F4F213B3E5F00AD5615 /* Assets.xcassets */; };
 		76D60F53213B3E5F00AD5615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D60F51213B3E5F00AD5615 /* LaunchScreen.storyboard */; };
+		76D60F5B213B401A00AD5615 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D60F5A213B401A00AD5615 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		76D60F4F213B3E5F00AD5615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76D60F52213B3E5F00AD5615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76D60F54213B3E5F00AD5615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76D60F5A213B401A00AD5615 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				76D60F51213B3E5F00AD5615 /* LaunchScreen.storyboard */,
 				76D60F54213B3E5F00AD5615 /* Info.plist */,
 				76D60F4C213B3E5F00AD5615 /* Verhuisdieren.xcdatamodeld */,
+				76D60F5A213B401A00AD5615 /* SearchViewController.swift */,
 			);
 			path = Verhuisdieren;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			files = (
 				76D60F48213B3E5F00AD5615 /* ViewController.swift in Sources */,
 				76D60F46213B3E5F00AD5615 /* AppDelegate.swift in Sources */,
+				76D60F5B213B401A00AD5615 /* SearchViewController.swift in Sources */,
 				76D60F4E213B3E5F00AD5615 /* Verhuisdieren.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
