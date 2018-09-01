@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CE37F47E1F86AD030D2B079 /* Pods_Verhuisdieren.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA09E727C53D3BF0D900EC3 /* Pods_Verhuisdieren.framework */; };
 		76D60F46213B3E5F00AD5615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D60F45213B3E5F00AD5615 /* AppDelegate.swift */; };
 		76D60F48213B3E5F00AD5615 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D60F47213B3E5F00AD5615 /* ViewController.swift */; };
 		76D60F4B213B3E5F00AD5615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D60F49213B3E5F00AD5615 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BA1F99C6A31EB0A36FDF33D /* Pods-Verhuisdieren.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verhuisdieren.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Verhuisdieren/Pods-Verhuisdieren.debug.xcconfig"; sourceTree = "<group>"; };
+		4FA09E727C53D3BF0D900EC3 /* Pods_Verhuisdieren.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Verhuisdieren.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D60F42213B3E5F00AD5615 /* Verhuisdieren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Verhuisdieren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D60F45213B3E5F00AD5615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76D60F47213B3E5F00AD5615 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		76D60F52213B3E5F00AD5615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76D60F54213B3E5F00AD5615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76D60F5A213B401A00AD5615 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8DD632796624741A6A6E833B /* Pods-Verhuisdieren.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verhuisdieren.release.xcconfig"; path = "Pods/Target Support Files/Pods-Verhuisdieren/Pods-Verhuisdieren.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE37F47E1F86AD030D2B079 /* Pods_Verhuisdieren.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		596994F7CB5B3A991F3EDA8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1F99C6A31EB0A36FDF33D /* Pods-Verhuisdieren.debug.xcconfig */,
+				8DD632796624741A6A6E833B /* Pods-Verhuisdieren.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5A6DE082F18BC47AF3E6EC7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FA09E727C53D3BF0D900EC3 /* Pods_Verhuisdieren.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		76D60F39213B3E5F00AD5615 = {
 			isa = PBXGroup;
 			children = (
 				76D60F44213B3E5F00AD5615 /* Verhuisdieren */,
 				76D60F43213B3E5F00AD5615 /* Products */,
+				596994F7CB5B3A991F3EDA8B /* Pods */,
+				5A6DE082F18BC47AF3E6EC7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76D60F57213B3E5F00AD5615 /* Build configuration list for PBXNativeTarget "Verhuisdieren" */;
 			buildPhases = (
+				A045C2557F24720D8661E49D /* [CP] Check Pods Manifest.lock */,
 				76D60F3E213B3E5F00AD5615 /* Sources */,
 				76D60F3F213B3E5F00AD5615 /* Frameworks */,
 				76D60F40213B3E5F00AD5615 /* Resources */,
+				F9DF447C8C23E7C231CCF421 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +162,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A045C2557F24720D8661E49D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Verhuisdieren-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9DF447C8C23E7C231CCF421 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Verhuisdieren/Pods-Verhuisdieren-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Verhuisdieren/Pods-Verhuisdieren-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76D60F3E213B3E5F00AD5615 /* Sources */ = {
@@ -280,6 +355,7 @@
 		};
 		76D60F58213B3E5F00AD5615 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BA1F99C6A31EB0A36FDF33D /* Pods-Verhuisdieren.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +372,7 @@
 		};
 		76D60F59213B3E5F00AD5615 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DD632796624741A6A6E833B /* Pods-Verhuisdieren.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
