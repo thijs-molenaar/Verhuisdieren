@@ -38,9 +38,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        scrapeSite(url: Constants.SearchViewControllerConstants.verhuisDierenScrapeUrl)
         catsTableView.dataSource = self
-        catsTableView.reloadData()
+        scrapeSite(url: Constants.SearchViewControllerConstants.verhuisDierenScrapeUrl)
+        //catsTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,21 +60,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.SearchViewControllerConstants.catCellIdentifier, for: indexPath)
         
         let row = indexPath.row
-        cell.textLabel?.text = cats[row]
         
-        let placeholder = UIImage(named: "cat_placeholder")
-        let url = URL(string: catsDetail[cats[row]]!)
-        cell.imageView?.kf.setImage(with: url, placeholder: placeholder, completionHandler: {
-            (image, error, cacheType, imageUrl) in
-            // image: Image? `nil` means failed
-            // error: NSError? non-`nil` means failed
-            // cacheType: CacheType
-            //                  .none - Just downloaded
-            //                  .memory - Got from memory cache
-            //                  .disk - Got from disk cache
-            // imageUrl: URL of the image
-            
-        })
+        if (retrievedCats.count > 0) {
+            cell.textLabel?.text = retrievedCats[row].name
+            let placeholder = UIImage(named: "cat_placeholder")
+            let url = URL(string: retrievedCats[row].thumbnailUrl!) // TODO: change forced unwrapping
+            cell.imageView?.kf.setImage(with: url, placeholder: placeholder)
+        }
         
         return cell
     }
@@ -132,6 +124,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
                 
             }
+            
+            // cats of first page have loaded, update tableView accordingly
+            catsTableView.reloadData()
         }
         
     }
