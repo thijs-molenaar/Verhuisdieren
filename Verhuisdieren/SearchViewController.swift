@@ -10,11 +10,18 @@ import UIKit
 import Alamofire
 import Kanna
 
+struct Constants {
+    struct SearchViewControllerConstants {
+        static let verhuisDierenScrapeUrl = "https://www.verhuisdieren.nl/alle-dieren/adoptiedieren/kat"
+    }
+}
+
 class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        scrapeSite(url: Constants.SearchViewControllerConstants.verhuisDierenScrapeUrl)
     }
     
     override func didReceiveMemoryWarning() {
@@ -22,4 +29,20 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func scrapeSite(url: String) {
+        Alamofire.request(url).responseString { response in
+            if response.result.isSuccess {
+                if let html = response.result.value {
+                    self.parseAdoptieKatHtml(html: html)
+                }
+            }
+            else {
+                NSLog("Request to site unsuccessful");
+            }
+        }
+    }
+    
+    func parseAdoptieKatHtml(html: String) {
+        
+    }
 }
