@@ -26,7 +26,7 @@ class CatTableViewCell : UITableViewCell {
     @IBOutlet weak var catDate: UILabel!
 }
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var catsTableView: UITableView!
     
@@ -59,6 +59,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // scroll is on top
+        if catsTableView.contentOffset.y <= 1 {
+            print("test")
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -104,8 +112,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             for node in doc.css("div.items--all-animals div.row ") {
                 
                 for figure in node.css("figure") {
-                    //print(figure.text)
-                    var cat = Cat()
+                    let cat = Cat()
                     
                     // set name
                     for name in figure.css("h3") {
