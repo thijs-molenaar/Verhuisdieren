@@ -43,6 +43,8 @@ class SearchViewController: UIViewController {
     }
     
     func parseAdoptieKatHtml(html: String) {
-        
+        if let doc = try? HTML(html: html, encoding: String.Encoding.utf8) {
+            print(doc.title)
+        }
     }
 }
