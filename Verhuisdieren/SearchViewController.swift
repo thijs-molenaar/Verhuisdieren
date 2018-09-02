@@ -18,6 +18,14 @@ struct Constants {
     }
 }
 
+class CatTableViewCell : UITableViewCell {
+    
+    @IBOutlet weak var catImageView: UIImageView!
+    @IBOutlet weak var catName: UILabel!
+    @IBOutlet weak var catCity: UILabel!
+    @IBOutlet weak var catDate: UILabel!
+}
+
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var catsTableView: UITableView!
@@ -37,10 +45,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         catsTableView.dataSource = self
         scrapeSite(url: Constants.SearchViewControllerConstants.verhuisDierenScrapeUrl)
-        //catsTableView.reloadData()
+        
+        catsTableView.rowHeight = UITableViewAutomaticDimension
+        catsTableView.estimatedRowHeight = 140
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,15 +68,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.SearchViewControllerConstants.catCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.SearchViewControllerConstants.catCellIdentifier, for: indexPath) as! CatTableViewCell
         
         let row = indexPath.row
         
         if (retrievedCats.count > 0) {
-            cell.textLabel?.text = retrievedCats[row].name
+            let cat = retrievedCats[row]
+            cell.catName.text = cat.name
+            cell.catCity.text = cat.city
+            cell.catDate.text = cat.date
             let placeholder = UIImage(named: "cat_placeholder")
             let url = URL(string: retrievedCats[row].thumbnailUrl!) // TODO: change forced unwrapping
-            cell.imageView?.kf.setImage(with: url, placeholder: placeholder)
+            cell.catImageView?.kf.setImage(with: url, placeholder: placeholder)
         }
         
         return cell
@@ -95,7 +109,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     
                     // set name
                     for name in figure.css("h3") {
-                        print(name.text)
                         cat.name = name.text
                     }
                     
