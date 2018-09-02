@@ -5,4 +5,5 @@ use_frameworks!
 target 'Verhuisdieren' do
     pod 'Alamofire', '~> 4.7'
     pod 'Kanna', '~> 4.0.0'
+    pod 'Kingfisher', '~> 4.0'
 end
