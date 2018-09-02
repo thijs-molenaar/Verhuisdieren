@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Kanna
+import Kingfisher
 
 struct Constants {
     struct SearchViewControllerConstants {
@@ -21,7 +22,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var catsTableView: UITableView!
     
-    var cats: [String] = ["barry", "alpha"]
+    // TODO: make cat data class with: name / place / thumburl / detailurl etc.
+    var cats: [String] = [
+        "moos",
+        "suki"
+    ]
+    
+    var catsDetail: [String:String] = [
+        "moos" : "https://www.verhuisdieren.nl/images/small-thumb/cropped-1535824165-sqf4Yf6B1W.jpg",
+        "suki" : "https://www.verhuisdieren.nl/images/small-thumb/cropped-1535878005-pVe42hkYHL.jpg"
+    ]
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +60,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let row = indexPath.row
         cell.textLabel?.text = cats[row]
         
-        var imageName = UIImage(named: "cat_placeholder")
-        cell.imageView?.image = imageName
+        let placeholder = UIImage(named: "cat_placeholder")
+        let url = URL(string: catsDetail[cats[row]]!)
+        cell.imageView?.kf.setImage(with: url, placeholder: placeholder)
         
         return cell
     }
