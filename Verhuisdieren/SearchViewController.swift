@@ -16,12 +16,20 @@ struct Constants {
     }
 }
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var catsTableView: UITableView!
+    
+    var cats: [String] = ["barry", "alpha"]
+    
+    let textCellIdentifier = "CatCell" // move to constants when working...
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        scrapeSite(url: Constants.SearchViewControllerConstants.verhuisDierenScrapeUrl)
+        //scrapeSite(url: Constants.SearchViewControllerConstants.verhuisDierenScrapeUrl)
+        catsTableView.dataSource = self
+        catsTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,6 +37,23 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cats.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
+        
+        let row = indexPath.row
+        cell.textLabel?.text = cats[row]
+        
+        return cell
+    }
+    
     func scrapeSite(url: String) {
         Alamofire.request(url).responseString { response in
             if response.result.isSuccess {
