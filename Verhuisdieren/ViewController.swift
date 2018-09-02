@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     @IBAction func openSearchForCatsView(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "SearchViewController")
+        let controller = storyboard.instantiateViewController(withIdentifier: "SearchCats")
         self.present(controller, animated: true, completion: nil)
     }
     

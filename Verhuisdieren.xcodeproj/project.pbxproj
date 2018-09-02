@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		27A5907F5191D4CD4FF4782B /* Pods_Verhuisdieren.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5CE29E12AB5DE1CD23866E /* Pods_Verhuisdieren.framework */; };
 		766CEBFC213C00A8001BCFD1 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766CEBFB213C00A8001BCFD1 /* Cat.swift */; };
+		76BCB31C213C8021007B6F30 /* DetailImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BCB31B213C8021007B6F30 /* DetailImagesViewController.swift */; };
 		76D60F46213B3E5F00AD5615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D60F45213B3E5F00AD5615 /* AppDelegate.swift */; };
 		76D60F48213B3E5F00AD5615 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D60F47213B3E5F00AD5615 /* ViewController.swift */; };
 		76D60F4B213B3E5F00AD5615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D60F49213B3E5F00AD5615 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		4F5CE29E12AB5DE1CD23866E /* Pods_Verhuisdieren.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Verhuisdieren.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		766CEBFB213C00A8001BCFD1 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
+		76BCB31B213C8021007B6F30 /* DetailImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImagesViewController.swift; sourceTree = "<group>"; };
 		76D60F42213B3E5F00AD5615 /* Verhuisdieren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Verhuisdieren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D60F45213B3E5F00AD5615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76D60F47213B3E5F00AD5615 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				76D60F4C213B3E5F00AD5615 /* Verhuisdieren.xcdatamodeld */,
 				76D60F5A213B401A00AD5615 /* SearchViewController.swift */,
 				766CEBFB213C00A8001BCFD1 /* Cat.swift */,
+				76BCB31B213C8021007B6F30 /* DetailImagesViewController.swift */,
 			);
 			path = Verhuisdieren;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76BCB31C213C8021007B6F30 /* DetailImagesViewController.swift in Sources */,
 				76D60F48213B3E5F00AD5615 /* ViewController.swift in Sources */,
 				76D60F46213B3E5F00AD5615 /* AppDelegate.swift in Sources */,
 				766CEBFC213C00A8001BCFD1 /* Cat.swift in Sources */,
