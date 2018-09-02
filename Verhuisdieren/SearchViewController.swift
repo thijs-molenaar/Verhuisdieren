@@ -13,6 +13,7 @@ import Kanna
 struct Constants {
     struct SearchViewControllerConstants {
         static let verhuisDierenScrapeUrl = "https://www.verhuisdieren.nl/alle-dieren/adoptiedieren/kat"
+        static let catCellIdentifier = "catCell"
     }
 }
 
@@ -21,9 +22,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var catsTableView: UITableView!
     
     var cats: [String] = ["barry", "alpha"]
-    
-    let textCellIdentifier = "CatCell" // move to constants when working...
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,10 +45,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.SearchViewControllerConstants.catCellIdentifier, for: indexPath)
         
         let row = indexPath.row
         cell.textLabel?.text = cats[row]
+        
+        var imageName = UIImage(named: "cat_placeholder")
+        cell.imageView?.image = imageName
         
         return cell
     }
