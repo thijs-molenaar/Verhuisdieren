@@ -32,11 +32,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         "moos" : "https://www.verhuisdieren.nl/images/small-thumb/cropped-1535824165-sqf4Yf6B1W.jpg",
         "suki" : "https://www.verhuisdieren.nl/images/small-thumb/cropped-1535878005-pVe42hkYHL.jpg"
     ]
+    
+    var retrievedCats: [Cat] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //scrapeSite(url: Constants.SearchViewControllerConstants.verhuisDierenScrapeUrl)
+        scrapeSite(url: Constants.SearchViewControllerConstants.verhuisDierenScrapeUrl)
         catsTableView.dataSource = self
         catsTableView.reloadData()
     }
@@ -62,7 +64,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         let placeholder = UIImage(named: "cat_placeholder")
         let url = URL(string: catsDetail[cats[row]]!)
-        cell.imageView?.kf.setImage(with: url, placeholder: placeholder)
+        cell.imageView?.kf.setImage(with: url, placeholder: placeholder, completionHandler: {
+            (image, error, cacheType, imageUrl) in
+            // image: Image? `nil` means failed
+            // error: NSError? non-`nil` means failed
+            // cacheType: CacheType
+            //                  .none - Just downloaded
+            //                  .memory - Got from memory cache
+            //                  .disk - Got from disk cache
+            // imageUrl: URL of the image
+            
+        })
         
         return cell
     }
@@ -82,7 +94,45 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func parseAdoptieKatHtml(html: String) {
         if let doc = try? HTML(html: html, encoding: String.Encoding.utf8) {
-            print(doc.title)
+            
+            for node in doc.css("div.items--all-animals div.row ") {
+                
+                for figure in node.css("figure") {
+                    //print(figure.text)
+                    var cat = Cat()
+                    
+                    // set name
+                    for name in figure.css("h3") {
+                        print(name.text)
+                        cat.name = name.text
+                    }
+                    
+                    // set thumbnailUrl
+                    for thumbnail in figure.css("img") {
+                        cat.thumbnailUrl = thumbnail["src"]
+                    }
+                    
+                    // set city
+                    for city in figure.css("p") {
+                        cat.city = city.text
+                    }
+                    
+                    // set date
+                    for date in figure.css("span.date") {
+                        cat.date = date.text
+                    }
+                    
+                    // set detailUrl
+                    for detail in figure.css("a") {
+                        cat.detailUrl = detail["href"]
+                    }
+                    
+                    retrievedCats.append(cat)
+                    
+                }
+                
+            }
         }
+        
     }
 }
