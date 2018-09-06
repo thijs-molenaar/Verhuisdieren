@@ -55,7 +55,7 @@
         <!--Search View Controller-->
         <scene sceneID="8nl-Mh-gcc">
             <objects>
-                <viewController storyboardIdentifier="SearchCats" id="7Rk-aV-maa" customClass="SearchViewController" customModule="Verhuisdieren" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchCats" id="7Rk-aV-maa" customClass="SearchViewController" customModule="Verhuisdieren" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dVG-Sr-huW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,12 +151,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="izJ-15-rX5">
-                                <rect key="frame" x="0.0" y="35" width="414" height="701"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cat_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="izJ-15-rX5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjb-W1-EjN">
-                                <rect key="frame" x="379" y="25" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjb-W1-EjN">
+                                <rect key="frame" x="361" y="20" width="33" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="closeView:" destination="ORL-0i-5y1" eventType="touchUpInside" id="jt0-Z8-AMR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -171,12 +175,13 @@
                         <viewLayoutGuide key="safeArea" id="qph-78-Stp"/>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="gjb-W1-EjN" id="ZSR-0q-QZ9"/>
                         <outlet property="imageHolder" destination="izJ-15-rX5" id="XgW-UX-HHF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZy-ZU-sKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="33"/>
+            <point key="canvasLocation" x="1615.9420289855075" y="32.608695652173914"/>
         </scene>
     </scenes>
     <resources>
