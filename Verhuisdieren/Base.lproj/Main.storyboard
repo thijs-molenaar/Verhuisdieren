@@ -151,8 +151,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cat_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="izJ-15-rX5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="izJ-15-rX5">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjb-W1-EjN">
                                 <rect key="frame" x="361" y="20" width="33" height="72"/>
@@ -165,12 +165,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gjb-W1-EjN" firstAttribute="top" secondItem="qph-78-Stp" secondAttribute="top" constant="5" id="6Nw-6l-Gan"/>
-                            <constraint firstItem="qph-78-Stp" firstAttribute="trailing" secondItem="gjb-W1-EjN" secondAttribute="trailing" constant="5" id="6a4-Sd-sJr"/>
-                            <constraint firstItem="qph-78-Stp" firstAttribute="bottom" secondItem="izJ-15-rX5" secondAttribute="bottom" id="ajj-9s-BbZ"/>
-                            <constraint firstItem="izJ-15-rX5" firstAttribute="top" secondItem="gjb-W1-EjN" secondAttribute="top" constant="10" id="eT4-mE-Bw8"/>
+                            <constraint firstItem="izJ-15-rX5" firstAttribute="leading" secondItem="qph-78-Stp" secondAttribute="leading" id="4zO-5x-GeO"/>
+                            <constraint firstItem="gjb-W1-EjN" firstAttribute="top" secondItem="qph-78-Stp" secondAttribute="top" constant="10" id="6Nw-6l-Gan"/>
+                            <constraint firstItem="gjb-W1-EjN" firstAttribute="trailing" secondItem="qph-78-Stp" secondAttribute="trailing" constant="-10" id="6a4-Sd-sJr"/>
+                            <constraint firstItem="izJ-15-rX5" firstAttribute="trailing" secondItem="qph-78-Stp" secondAttribute="trailing" id="9wt-0Y-OtP"/>
+                            <constraint firstItem="izJ-15-rX5" firstAttribute="top" secondItem="R9C-ht-c1n" secondAttribute="topMargin" id="B2w-vf-MeU"/>
+                            <constraint firstItem="izJ-15-rX5" firstAttribute="bottom" secondItem="qph-78-Stp" secondAttribute="bottom" id="ajj-9s-BbZ"/>
+                            <constraint firstItem="izJ-15-rX5" firstAttribute="bottom" secondItem="qph-78-Stp" secondAttribute="bottom" id="bmr-vY-SjY"/>
                             <constraint firstItem="izJ-15-rX5" firstAttribute="leading" secondItem="qph-78-Stp" secondAttribute="leading" id="kDC-K1-Q8s"/>
-                            <constraint firstItem="qph-78-Stp" firstAttribute="trailing" secondItem="izJ-15-rX5" secondAttribute="trailing" id="nAh-cy-k32"/>
+                            <constraint firstItem="izJ-15-rX5" firstAttribute="trailing" secondItem="qph-78-Stp" secondAttribute="trailing" id="nAh-cy-k32"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qph-78-Stp"/>
                     </view>
