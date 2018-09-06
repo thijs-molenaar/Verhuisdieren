@@ -170,6 +170,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qph-78-Stp"/>
                     </view>
+                    <connections>
+                        <outlet property="imageHolder" destination="izJ-15-rX5" id="XgW-UX-HHF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZy-ZU-sKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

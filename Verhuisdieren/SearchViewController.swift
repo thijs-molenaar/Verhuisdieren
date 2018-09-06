@@ -30,17 +30,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var catsTableView: UITableView!
     
-    // TODO: make cat data class with: name / place / thumburl / detailurl etc.
-    var cats: [String] = [
-        "moos",
-        "suki"
-    ]
-    
-    var catsDetail: [String:String] = [
-        "moos" : "https://www.verhuisdieren.nl/images/small-thumb/cropped-1535824165-sqf4Yf6B1W.jpg",
-        "suki" : "https://www.verhuisdieren.nl/images/small-thumb/cropped-1535878005-pVe42hkYHL.jpg"
-    ]
-    
     var retrievedCats: [Cat] = []
         
     override func viewDidLoad() {
@@ -51,6 +40,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         catsTableView.rowHeight = UITableViewAutomaticDimension
         catsTableView.estimatedRowHeight = 140
+        
+        catsTableView.allowsSelection = true
+        catsTableView.delegate = self
         
     }
     
@@ -93,6 +85,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCat = retrievedCats[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "catImages") as! DetailImagesViewController
+        controller.selectedCat = selectedCat
+        self.present(controller, animated: true, completion: nil)
     }
     
     func scrapeSite(url: String) {
